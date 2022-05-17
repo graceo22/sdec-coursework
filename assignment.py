@@ -27,8 +27,8 @@ st.subheader('User Input parameters')
 st.write(df)
 
 iris = pd.read_csv('https://github.com/graceo22/sdec-coursework/blob/main/IRIS.csv')
-X = iris.data
-Y = iris.target
+X = iris.drop('species', axis=1)
+Y = iris['species']
 
 clf = RandomForestClassifier()
 clf.fit(X, Y)
