@@ -8,6 +8,9 @@ st.write("""
 This app predicts the **Iris flower** type!
 """)
 
+from PIL import Image
+image = Image.open('https://s3.amazonaws.com/assets.datacamp.com/blog_assets/Machine+Learning+R/iris-machinelearning.png')
+
 st.sidebar.header('User Input Parameters')
 
 def user_input_features():
@@ -39,8 +42,8 @@ prediction_proba = clf.predict_proba(df)
 
 
 st.subheader('Class labels and their corresponding index number')
-species = st.write(['Iris-setosa','Iris-versicolor','Iris-virginica'])
-features = pd.DataFrame(species, index=[0])
+st.write(['Iris-setosa','Iris-versicolor','Iris-virginica'])
+
 
 st.subheader('Prediction')
 #st.write(iris.target_names[prediction])
